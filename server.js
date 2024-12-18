@@ -2,7 +2,7 @@
 const express =require('express')
 const app = express();
 const port = 8080;
-const handler = require('./api/index');
+const handler = require('./delapi');
 
 app.get('/q', handler);
 
